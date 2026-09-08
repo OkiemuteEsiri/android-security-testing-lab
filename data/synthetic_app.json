@@ -1,0 +1,20 @@
+{
+  "package": "com.example.syntheticbank",
+  "debuggable": true,
+  "uses_cleartext_traffic": true,
+  "allow_backup": true,
+  "target_sdk": 34,
+  "permissions": [
+    "android.permission.INTERNET",
+    "android.permission.ACCESS_FINE_LOCATION",
+    "android.permission.RECORD_AUDIO"
+  ],
+  "justified_permissions": [
+    "android.permission.ACCESS_FINE_LOCATION"
+  ],
+  "components": [
+    {"name": ".MainActivity", "type": "activity", "exported": true, "business_required": true},
+    {"name": ".DebugReceiver", "type": "receiver", "exported": true, "business_required": false},
+    {"name": ".SyncService", "type": "service", "exported": false, "business_required": false}
+  ]
+}
