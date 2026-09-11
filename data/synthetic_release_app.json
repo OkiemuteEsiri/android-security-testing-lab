@@ -1,0 +1,34 @@
+{
+  "package": "com.example.syntheticwallet",
+  "release_build": true,
+  "debuggable": true,
+  "allow_backup": true,
+  "uses_cleartext_traffic": true,
+  "target_sdk": 33,
+  "min_target_sdk": 35,
+  "exported_components": [
+    {"name": "DeepLinkActivity", "exported": true, "business_required": true, "deep_link": true, "privileged": false},
+    {"name": "AdminReceiver", "exported": true, "business_required": false, "deep_link": false, "privileged": true},
+    {"name": "InternalSyncService", "exported": false, "business_required": false, "deep_link": false, "privileged": false}
+  ],
+  "permissions": [
+    "android.permission.INTERNET",
+    "android.permission.ACCESS_FINE_LOCATION",
+    "android.permission.RECORD_AUDIO"
+  ],
+  "justified_permissions": ["android.permission.ACCESS_FINE_LOCATION"],
+  "network_security_config": {
+    "trust_user_cas": true,
+    "certificate_pinning": false
+  },
+  "signing": {
+    "algorithm": "SHA1withRSA",
+    "key_bits": 1024,
+    "key_alias": "synthetic-release-key"
+  },
+  "data_handling": {
+    "sensitive": true,
+    "categories": ["account-profile", "payment-token"],
+    "encrypted_at_rest": true
+  }
+}
